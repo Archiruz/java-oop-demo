@@ -10,7 +10,7 @@ public class TiketPesawat extends JFrame {
         rdgCaraBayar.add(rdobni);
         rdgCaraBayar.add(rdomandiri);
         rdgCaraBayar.add(rdobri);
-        rdgCaraBayar.add(rdobtn);
+        rdgCaraBayar.add(rdolink);
     }
                           
     private void initComponents() {
@@ -33,7 +33,7 @@ public class TiketPesawat extends JFrame {
         rdobni = new JRadioButton();
         rdomandiri = new JRadioButton();
         rdobri = new JRadioButton();
-        rdobtn = new JRadioButton();
+        rdolink = new JRadioButton();
         btnHitung = new JButton();
         btnKosong = new JButton();
         jRadioButton4 = new JRadioButton();
@@ -165,12 +165,12 @@ public class TiketPesawat extends JFrame {
         rdobri.setFont(new java.awt.Font("Tahoma", 1, 14));
         rdobri.setText("Debit BRI");
  
-        rdgCaraBayar.add(rdobtn);
-        rdobtn.setFont(new java.awt.Font("Tahoma", 1, 14));
-        rdobtn.setText("LinkAja");
-        rdobtn.addActionListener(new java.awt.event.ActionListener() {
+        rdgCaraBayar.add(rdolink);
+        rdolink.setFont(new java.awt.Font("Tahoma", 1, 14));
+        rdolink.setText("LinkAja");
+        rdolink.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rdobtnActionPerformed(evt);
+                rdolinkActionPerformed(evt);
             }
         });
  
@@ -193,7 +193,7 @@ public class TiketPesawat extends JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(rdobni)
-                            .addComponent(rdobtn))))
+                            .addComponent(rdolink))))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -209,7 +209,7 @@ public class TiketPesawat extends JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rdomandiri)
                     .addComponent(rdobri)
-                    .addComponent(rdobtn))
+                    .addComponent(rdolink))
                 .addContainerGap())
         );
  
@@ -625,12 +625,12 @@ public class TiketPesawat extends JFrame {
         JOptionPane.showMessageDialog(this,
         "Data Dilengkapi dahulu");
     } else {
-    int nfilm1 = Integer.parseInt(txtpswt1.getText());
-    int nfilm2 = Integer.parseInt(txtpswt2.getText());
-    int nfilm3 = Integer.parseInt(txtpswt3.getText());
-    int nfilm4 = Integer.parseInt(txtpswt4.getText());
-    int nTotal = (30000 * nfilm1)+
-        (35000 * nfilm2)+(35000 * nfilm3)+(35000 * nfilm4);
+    int npswt1 = Integer.parseInt(txtpswt1.getText());
+    int npswt2 = Integer.parseInt(txtpswt2.getText());
+    int npswt3 = Integer.parseInt(txtpswt3.getText());
+    int npswt4 = Integer.parseInt(txtpswt4.getText());
+    int nTotal = (30000 * npswt1)+
+        (35000 * npswt2)+(35000 * npswt3)+(35000 * npswt4);
         lblTotal.setText("Rp. "+nTotal);
     if (rdouangtunai.isSelected())
         lblCaraBayar.setText(rdouangtunai.getActionCommand());
@@ -642,8 +642,8 @@ public class TiketPesawat extends JFrame {
         lblCaraBayar.setText(rdomandiri.getActionCommand());
     if (rdobri.isSelected())
         lblCaraBayar.setText(rdobri.getActionCommand());
-    if (rdobtn.isSelected())
-        lblCaraBayar.setText(rdobtn.getActionCommand());
+    if (rdolink.isSelected())
+        lblCaraBayar.setText(rdolink.getActionCommand());
 }
     }                                        
  
@@ -695,7 +695,7 @@ public class TiketPesawat extends JFrame {
     private void rdomandiriActionPerformed(java.awt.event.ActionEvent evt) {      
     }                                          
  
-    private void rdobtnActionPerformed(java.awt.event.ActionEvent evt) {        
+    private void rdolinkActionPerformed(java.awt.event.ActionEvent evt) {        
     }                                      
  
     private void rdouangtunaiActionPerformed(java.awt.event.ActionEvent evt) {   
@@ -769,7 +769,7 @@ public class TiketPesawat extends JFrame {
     private javax.swing.JRadioButton rdobni;
     private javax.swing.JRadioButton rdobri;
     private javax.swing.JRadioButton rdomandiri;
-    private javax.swing.JRadioButton rdobtn;
+    private javax.swing.JRadioButton rdolink;
     private javax.swing.JRadioButton rdouangtunai;
     private javax.swing.JTextField txtpswt1;
     private javax.swing.JTextField txtpswt2;
