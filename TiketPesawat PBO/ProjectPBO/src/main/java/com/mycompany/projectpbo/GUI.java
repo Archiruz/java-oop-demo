@@ -5,6 +5,8 @@
  */
 package com.mycompany.projectpbo;
 
+import javax.swing.JCheckBox;
+
 /**
  *
  * @author USER
@@ -16,6 +18,18 @@ public class GUI extends javax.swing.JFrame{
      */
     public GUI() {
         initComponents();
+
+        
+
+        Brawijaya kereta1 = new Brawijaya();
+        Gajayana kereta2 = new Gajayana();
+        Jayabaya kereta3 = new Jayabaya();
+        Matarmaja kereta4 = new Matarmaja();
+
+        jCheckBox1.setText(kereta1.getNama());
+        jCheckBox2.setText(kereta2.getNama());
+        jCheckBox3.setText(kereta3.getNama());
+        jCheckBox4.setText(kereta4.getNama());
     }
 
     /**
@@ -70,7 +84,6 @@ public class GUI extends javax.swing.JFrame{
         jLabel1.setText("JADWAL PENERBANGAN");
 
         jCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jCheckBox1.setText("MATARMAJA");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox1ActionPerformed(evt);
@@ -78,7 +91,6 @@ public class GUI extends javax.swing.JFrame{
         });
 
         jCheckBox2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jCheckBox2.setText("GAJAYANA");
         jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox2ActionPerformed(evt);
@@ -86,10 +98,18 @@ public class GUI extends javax.swing.JFrame{
         });
 
         jCheckBox3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jCheckBox3.setText("JAYABAYA");
+        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox3ActionPerformed(evt);
+            }
+        });
 
         jCheckBox4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jCheckBox4.setText("BRAWIJAYA");
+        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox4ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("TIKET");
@@ -364,12 +384,44 @@ public class GUI extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
+        if(jCheckBox1.isSelected()){
+            jmlTiket1.setEditable(true);
+            jmlTiket1.setText("1");
+        }else{
+            jmlTiket1.setEditable(false);
+            jmlTiket1.setText("0");
+        }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-        // TODO add your handling code here:
+        if(jCheckBox2.isSelected()){
+            jmlTiket2.setEditable(true);
+            jmlTiket2.setText("1");
+        }else{
+            jmlTiket2.setEditable(false);
+            jmlTiket2.setText("0");
+        }
     }//GEN-LAST:event_jCheckBox2ActionPerformed
+    
+    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+        if(jCheckBox3.isSelected()){
+            jmlTiket3.setEditable(true);
+            jmlTiket3.setText("1");
+        }else{
+            jmlTiket3.setEditable(false);
+            jmlTiket3.setText("0");
+        }
+    }//GEN-LAST:event_jCheckBox3ActionPerformed
+
+    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+        if(jCheckBox4.isSelected()){
+            jmlTiket4.setEditable(true);
+            jmlTiket4.setText("1");
+        }else{
+            jmlTiket4.setEditable(false);
+            jmlTiket4.setText("0");
+        }
+    }//GEN-LAST:event_jCheckBox4ActionPerformed
 
     private void jmlTiket1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmlTiket1ActionPerformed
         // TODO add your handling code here:
