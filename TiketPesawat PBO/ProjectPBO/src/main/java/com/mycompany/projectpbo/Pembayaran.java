@@ -9,15 +9,14 @@ package com.mycompany.projectpbo;
  *
  * @author USER
  */
-public class TiketGaruda extends TiketPesawat{
+public class Pembayaran {
     private String nama;
     
-    public TiketGaruda(String namaMaskapai, int harga, int jumlah){
-        super(harga,jumlah);
-        nama = namaMaskapai;
+    public String getPembayaran(){
+        return nama;
     }
     
-    public void setNama(){
-        nama = "Garuda Indonesia";
+    public void setPembayaran(String newPembayaran){
+        this.nama = newPembayaran;
     }
 }

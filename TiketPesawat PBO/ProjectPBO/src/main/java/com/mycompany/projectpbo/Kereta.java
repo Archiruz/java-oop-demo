@@ -9,12 +9,6 @@ package com.mycompany.projectpbo;
  *
  * @author USER
  */
-public class TiketPesawat {
-    private int harga = 0;
-    private int jumlah = 0;
-    
-    public TiketPesawat(int harga, int jumlah){
-        this.harga = harga;
-        this.jumlah = jumlah;
-    }
+public interface Kereta extends Tiket{
+    public void setNama();
 }
