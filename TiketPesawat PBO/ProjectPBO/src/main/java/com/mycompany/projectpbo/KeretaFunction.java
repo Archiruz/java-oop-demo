@@ -9,6 +9,8 @@ package com.mycompany.projectpbo;
  *
  * @author USER
  */
-public interface Kereta extends Tiket{
-    public void setNama();
+public interface KeretaFunction {
+    public void method1();
+    public void method2();
+    public void method3();
 }

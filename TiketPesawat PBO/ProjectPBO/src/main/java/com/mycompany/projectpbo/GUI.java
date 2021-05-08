@@ -11,15 +11,13 @@ import javax.swing.JCheckBox;
  *
  * @author USER
  */
-public class GUI extends javax.swing.JFrame{
+public class GUI extends javax.swing.JFrame implements Tiket, KeretaFunction{
 
     /**
      * Creates new form GUI
      */
     public GUI() {
         initComponents();
-
-        
 
         Brawijaya kereta1 = new Brawijaya();
         Gajayana kereta2 = new Gajayana();
@@ -31,7 +29,32 @@ public class GUI extends javax.swing.JFrame{
         jCheckBox3.setText(kereta3.getNama());
         jCheckBox4.setText(kereta4.getNama());
     }
-
+    
+    public class Kereta{
+        private String nama;
+        private int harga, jumlah;
+        
+        public String getNama(){
+            return nama;
+        }
+    }
+    
+    public class Brawijaya extends Kereta{
+        
+    }
+    
+    public class Gajayana extends Kereta{
+        
+    }
+    
+    public class Jayabaya extends Kereta{
+        
+    }
+    
+    public class Matarmaja extends Kereta{
+        
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -219,11 +242,12 @@ public class GUI extends javax.swing.JFrame{
                     .addComponent(jLabel8)
                     .addComponent(jLabel12))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jmlTiket3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
-                    .addComponent(jLabel13))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jCheckBox3)
+                        .addComponent(jmlTiket3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel13)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCheckBox4)
