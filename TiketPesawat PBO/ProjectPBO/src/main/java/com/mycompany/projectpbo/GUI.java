@@ -81,7 +81,7 @@ public class GUI extends javax.swing.JFrame{
         jPanel1.add(jLabel3, java.awt.BorderLayout.CENTER);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("JADWAL PENERBANGAN");
+        jLabel1.setText("NAMA KERETA");
 
         jCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
