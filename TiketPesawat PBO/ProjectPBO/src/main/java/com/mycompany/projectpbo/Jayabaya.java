@@ -12,6 +12,11 @@ package com.mycompany.projectpbo;
 public class Jayabaya implements Kereta{
     private String nama;
     private int harga, jumlah;
+
+    public Jayabaya(){
+        this.setNama();
+        this.setHarga();
+    }
     
     public String getNama(){
         return this.nama;
