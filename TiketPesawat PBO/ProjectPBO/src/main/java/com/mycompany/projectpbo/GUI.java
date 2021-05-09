@@ -624,7 +624,21 @@ public class GUI extends javax.swing.JFrame implements KeretaFunction{
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        
+        jLabel15.setText("0");
+        jLabel7.setText("--------");
+        jCheckBox1.setSelected(false);
+        jCheckBox2.setSelected(false);
+        jCheckBox3.setSelected(false);
+        jCheckBox4.setSelected(false);
+        jmlTiket1.setText("0");
+        jmlTiket1.setEditable(false);
+        jmlTiket2.setText("0");
+        jmlTiket2.setEditable(false);
+        jmlTiket3.setText("0");
+        jmlTiket3.setEditable(false);
+        jmlTiket4.setText("0");
+        jmlTiket4.setEditable(false);
+        pembayaranGroup.clearSelection();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
