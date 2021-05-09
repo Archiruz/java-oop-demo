@@ -9,8 +9,7 @@ package com.mycompany.projectpbo;
  *
  * @author USER
  */
-public class GUI extends javax.swing.JFrame{
-
+public class GUI extends javax.swing.JFrame implements KeretaFunction{
     /**
      * Creates new form GUI
      */
@@ -20,6 +19,7 @@ public class GUI extends javax.swing.JFrame{
     }
     
     public void alterComponents(){
+        
         Brawijaya kereta1 = new Brawijaya();
         Gajayana kereta2 = new Gajayana();
         Jayabaya kereta3 = new Jayabaya();
@@ -30,57 +30,102 @@ public class GUI extends javax.swing.JFrame{
         kereta3.setNama("Jayabaya");
         kereta4.setNama("Matarmaja");
         
+        kereta1.setHarga(250000);
+        kereta2.setHarga(300000);
+        kereta3.setHarga(420000);
+        kereta4.setHarga(500000);
+        
         jCheckBox1.setText(kereta1.getNama());
         jCheckBox2.setText(kereta2.getNama());
         jCheckBox3.setText(kereta3.getNama());
         jCheckBox4.setText(kereta4.getNama());
-    }
-    
-    public class Kereta{
-        private String nama;
-        private int harga, jumlah;
         
-        //getter
-        public String getNama(){
-            return nama;
-        }
-        
-        public int getHarga(){
-            return harga;
-        }
-        
-        public int getJumlah(){
-            return jumlah;
-        }
-        
-        //setter
-        public void setNama(String nama){
-            this.nama = nama;
-        }
-        
-        public void setHarga(int harga){
-            this.harga = harga;
-        }
-        
-        public void setJumlah(int jumlah){
-            this.jumlah = jumlah;
-        }
+        jLabel16.setText("1 Tiket = Rp"+Integer.toString(kereta1.getHarga()));
+        jLabel17.setText("1 Tiket = Rp"+Integer.toString(kereta2.getHarga()));
+        jLabel18.setText("1 Tiket = Rp"+Integer.toString(kereta3.getHarga()));
+        jLabel19.setText("1 Tiket = Rp"+Integer.toString(kereta4.getHarga()));
     }
     
     public class Brawijaya extends Kereta{
+        private int newJumlah;
         
+        @Override
+        public void setJumlah(int jumlah){
+            newJumlah = jumlah;
+        }
+        
+        @Override
+        public int getJumlah(){
+            return newJumlah;
+        }
     }
     
     public class Gajayana extends Kereta{
+        private int newJumlah;
         
+        @Override
+        public void setJumlah(int jumlah){
+            newJumlah = jumlah;
+        }
+        
+        @Override
+        public int getJumlah(){
+            return newJumlah;
+        }
     }
     
     public class Jayabaya extends Kereta{
+        private int newJumlah;
         
+        @Override
+        public void setJumlah(int jumlah){
+            newJumlah = jumlah;
+        }
+        
+        @Override
+        public int getJumlah(){
+            return newJumlah;
+        }
     }
     
     public class Matarmaja extends Kereta{
+        private int newJumlah;
         
+        @Override
+        public void setJumlah(int jumlah){
+            newJumlah = jumlah;
+        }
+        
+        @Override
+        public int getJumlah(){
+            return newJumlah;
+        }
+    }
+    
+    @Override
+    public int totalHarga(){
+        Brawijaya kereta1 = new Brawijaya();
+        Gajayana kereta2 = new Gajayana();
+        Jayabaya kereta3 = new Jayabaya();
+        Matarmaja kereta4 = new Matarmaja();
+        
+        kereta1.setHarga(250000);
+        kereta2.setHarga(300000);
+        kereta3.setHarga(420000);
+        kereta4.setHarga(500000);
+        
+        kereta1.setJumlah(Integer.parseInt(jmlTiket1.getText()));
+        kereta2.setJumlah(Integer.parseInt(jmlTiket2.getText()));
+        kereta3.setJumlah(Integer.parseInt(jmlTiket3.getText()));
+        kereta4.setJumlah(Integer.parseInt(jmlTiket4.getText()));
+        
+        int a,b,c,d;
+        a = kereta1.getHarga() * kereta1.getJumlah();
+        b = kereta2.getHarga() * kereta2.getJumlah();
+        c = kereta3.getHarga() * kereta3.getJumlah();
+        d = kereta4.getHarga() * kereta4.getJumlah();
+        
+        return(a+b+c+d);
     }
     
     /**
@@ -202,13 +247,13 @@ public class GUI extends javax.swing.JFrame{
             }
         });
 
-        jLabel16.setText("1 Tiket = Rp250.000");
+        jLabel16.setText("SAMPLE TEXT");
 
-        jLabel17.setText("1 Tiket = Rp320.000");
+        jLabel17.setText("SAMPLE TEXT");
 
-        jLabel18.setText("1 Tiket = Rp400.000");
+        jLabel18.setText("SAMPLE TEXT");
 
-        jLabel19.setText("1 Tiket = Rp500.000");
+        jLabel19.setText("SAMPLE TEXT");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -217,30 +262,32 @@ public class GUI extends javax.swing.JFrame{
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jCheckBox2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jCheckBox1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jCheckBox3)
+                    .addComponent(jCheckBox4)
+                    .addComponent(jLabel1))
+                .addGap(174, 174, 174)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jCheckBox2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jCheckBox1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jCheckBox3)
-                            .addComponent(jCheckBox4))
-                        .addGap(257, 257, 257)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jmlTiket1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jmlTiket2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jmlTiket3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jmlTiket4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(53, 53, 53)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel19)
-                            .addComponent(jLabel18)
-                            .addComponent(jLabel17)
-                            .addComponent(jLabel16)))
+                        .addComponent(jmlTiket4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel19))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(174, 174, 174)
-                        .addComponent(jLabel4)))
-                .addContainerGap(58, Short.MAX_VALUE))
+                        .addComponent(jmlTiket3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel18))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jmlTiket2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel17))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jmlTiket1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel16)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -360,7 +407,7 @@ public class GUI extends javax.swing.JFrame{
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBNI)
                     .addComponent(btnLink))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         jButton1.setText("TOTAL");
@@ -371,6 +418,11 @@ public class GUI extends javax.swing.JFrame{
         });
 
         jButton2.setText("RESET");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -381,7 +433,7 @@ public class GUI extends javax.swing.JFrame{
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -430,7 +482,7 @@ public class GUI extends javax.swing.JFrame{
                     .addComponent(jLabel15))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel7)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -451,7 +503,7 @@ public class GUI extends javax.swing.JFrame{
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 12, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -459,7 +511,7 @@ public class GUI extends javax.swing.JFrame{
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -492,30 +544,38 @@ public class GUI extends javax.swing.JFrame{
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        jLabel15.setText(Integer.toString(totalHarga()));
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnBNIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBNIActionPerformed
         // TODO add your handling code here:
+        jLabel7.setText(btnBNI.getText());
     }//GEN-LAST:event_btnBNIActionPerformed
 
     private void btnLinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLinkActionPerformed
         // TODO add your handling code here:
+        jLabel7.setText(btnLink.getText());
     }//GEN-LAST:event_btnLinkActionPerformed
 
     private void btnBRIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBRIActionPerformed
         // TODO add your handling code here:
+        jLabel7.setText(btnBRI.getText());
     }//GEN-LAST:event_btnBRIActionPerformed
 
     private void btnMandiriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMandiriActionPerformed
         // TODO add your handling code here:
+        jLabel7.setText(btnMandiri.getText());
     }//GEN-LAST:event_btnMandiriActionPerformed
 
     private void btnBCAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBCAActionPerformed
         // TODO add your handling code here:
+        jLabel7.setText(btnBCA.getText());
     }//GEN-LAST:event_btnBCAActionPerformed
 
     private void btnTunaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTunaiActionPerformed
         // TODO add your handling code here:
+        jLabel7.setText(btnTunai.getText());
     }//GEN-LAST:event_btnTunaiActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
@@ -561,6 +621,11 @@ public class GUI extends javax.swing.JFrame{
             jmlTiket4.setText("0");
         }
     }//GEN-LAST:event_jCheckBox4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

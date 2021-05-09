@@ -10,7 +10,5 @@ package com.mycompany.projectpbo;
  * @author USER
  */
 public interface KeretaFunction {
-    public void method1();
-    public void method2();
-    public void method3();
+    public int totalHarga();
 }
