@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package com.mycompany.projectpbo;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -544,7 +545,14 @@ public class GUI extends javax.swing.JFrame implements KeretaFunction{
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        jLabel15.setText(Integer.toString(totalHarga()));
+        
+        try {
+            jLabel15.setText(Integer.toString(totalHarga()));
+        }
+        catch(NumberFormatException exc){
+            JOptionPane.showMessageDialog(rootPane,"Data yang dimasukan harus berupa angka ");
+           }
+                
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
