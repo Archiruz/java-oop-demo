@@ -653,6 +653,7 @@ public class GUI extends javax.swing.JFrame implements KeretaFunction{
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        long startTime = System.nanoTime();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -682,6 +683,10 @@ public class GUI extends javax.swing.JFrame implements KeretaFunction{
                 new GUI().setVisible(true);
             }
         });
+        long endTime = System.nanoTime();
+        long totalTime = (endTime - startTime);
+        System.out.println("Execution time is " + totalTime + " nanoseconds");
+        System.out.println("Execution time is " + totalTime/1000000 + " miliseconds");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
