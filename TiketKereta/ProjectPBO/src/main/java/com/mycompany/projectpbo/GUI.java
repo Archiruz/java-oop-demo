@@ -550,7 +550,7 @@ public class GUI extends javax.swing.JFrame implements KeretaFunction{
             jLabel15.setText(Integer.toString(totalHarga()));
         }
         catch(NumberFormatException exc){
-            JOptionPane.showMessageDialog(rootPane,"Data yang dimasukan harus berupa angka ");
+            JOptionPane.showMessageDialog(rootPane,"Data yang dimasukan harus berupa angka!");
            }
                 
         
