@@ -3,86 +3,41 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.projectpbo;
+package com.mycompany.tiketkereta;
 
 /**
  *
  * @author USER
  */
-public class GUI extends javax.swing.JFrame{
+public class TiketKereta extends javax.swing.JFrame{
     /**
      * Creates new form GUI
      */
-
-    Kereta kereta1 = new Kereta("Brawijaya", 250000);
-    Kereta kereta2 = new Kereta("Gajayana", 300000);
-    Kereta kereta3 = new Kereta("Jayabaya", 420000);
-    Kereta kereta4 = new Kereta("Matarmaja", 500000);
+    public int a,b,c,d;
     
-    public GUI() {
+    public TiketKereta() {
         initComponents();
         alterComponents();
     }
     
     public void alterComponents(){
-        jCheckBox1.setText(kereta1.getNama());
-        jCheckBox2.setText(kereta2.getNama());
-        jCheckBox3.setText(kereta3.getNama());
-        jCheckBox4.setText(kereta4.getNama());
         
-        jLabel16.setText("1 Tiket = Rp"+Integer.toString(kereta1.getHarga()));
-        jLabel17.setText("1 Tiket = Rp"+Integer.toString(kereta2.getHarga()));
-        jLabel18.setText("1 Tiket = Rp"+Integer.toString(kereta3.getHarga()));
-        jLabel19.setText("1 Tiket = Rp"+Integer.toString(kereta4.getHarga()));
-    }
-    
-    public class Kereta{
-        private String nama;
-        private int harga, jumlah;
-
-        public Kereta(String nama, int harga){
-            this.nama = nama;
-            this.harga = harga;
-        }
+        jCheckBox1.setText("Brawijaya");
+        jCheckBox2.setText("Gajayana");
+        jCheckBox3.setText("Jayabaya");
+        jCheckBox4.setText("Matarmaja");
         
-        //getter
-        public String getNama(){
-            return nama;
-        }
-        
-        public int getHarga(){
-            return harga;
-        }
-        
-        public int getJumlah(){
-            return jumlah;
-        }
-        
-        //setter
-        public void setNama(String nama){
-            this.nama = nama;
-        }
-        
-        public void setHarga(int harga){
-            this.harga = harga;
-        }
-        
-        public void setJumlah(int jumlah){
-            this.jumlah = jumlah;
-        }
+        jLabel16.setText("1 Tiket = Rp250000");
+        jLabel17.setText("1 Tiket = Rp300000");
+        jLabel18.setText("1 Tiket = Rp420000");
+        jLabel19.setText("1 Tiket = Rp500000");
     }
     
     public int totalHarga(){
-        kereta1.setJumlah(Integer.parseInt(jmlTiket1.getText()));
-        kereta2.setJumlah(Integer.parseInt(jmlTiket2.getText()));
-        kereta3.setJumlah(Integer.parseInt(jmlTiket3.getText()));
-        kereta4.setJumlah(Integer.parseInt(jmlTiket4.getText()));
-        
-        int a,b,c,d;
-        a = kereta1.getHarga() * kereta1.getJumlah();
-        b = kereta2.getHarga() * kereta2.getJumlah();
-        c = kereta3.getHarga() * kereta3.getJumlah();
-        d = kereta4.getHarga() * kereta4.getJumlah();
+        a = Integer.parseInt(jmlTiket1.getText()) * 250000;
+        b = Integer.parseInt(jmlTiket2.getText()) * 300000;
+        c = Integer.parseInt(jmlTiket3.getText()) * 420000;
+        d = Integer.parseInt(jmlTiket4.getText()) * 500000;
         
         return(a+b+c+d);
     }
@@ -604,6 +559,7 @@ public class GUI extends javax.swing.JFrame{
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        long startTime = System.nanoTime();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -617,22 +573,26 @@ public class GUI extends javax.swing.JFrame{
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TiketKereta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TiketKereta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TiketKereta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TiketKereta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUI().setVisible(true);
+                new TiketKereta().setVisible(true);
             }
         });
+        long endTime = System.nanoTime();
+        long totalTime = (endTime - startTime);
+        System.out.println("Execution time is " + totalTime + " nanoseconds");
+        System.out.println("Execution time is " + totalTime/1000000 + " miliseconds");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
