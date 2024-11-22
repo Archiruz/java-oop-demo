@@ -16,3 +16,6 @@ Dengan tambahan exception handling.
 
 ## Project Goals
 Di dalam repositori ini juga terdapat implementasi non-OOP untuk sistem yang sama. Tujuan pembuatan dua implementasi ini yaitu untuk membandingkan performa dari implementasi OOP dan non-OOP. Kami membuat draf artikel ilmiah yang didalamnya terdapat dokumentasi desain sistem dan komparasi performa.
+
+## System Design
+![](design.png)
